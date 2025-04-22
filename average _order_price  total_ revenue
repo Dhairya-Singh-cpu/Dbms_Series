@@ -1,0 +1,32 @@
+-- Create table
+-- Drop if already exists (optional safety)
+DROP TABLE IF EXISTS sale;
+
+-- Create table with correct types
+CREATE TABLE sale (
+    sale_id VARCHAR(10) PRIMARY KEY,
+    product_id INT NOT NULL,
+    sale_date DATE NOT NULL,
+    total_price DECIMAL
+);
+
+-- Insert data
+INSERT INTO sale VALUES
+('O1', 101, '2024-01-01', 2500.00),
+('O2', 102, '2024-01-02', 900.00),
+('O3', 103, '2024-01-02', 60.00),
+('O4', 104, '2024-01-03', 80.00),
+('O5', 105, '2024-01-03', 90.00);
+
+-- Fetch all
+SELECT * FROM sale;
+
+SELECT sale_id,sale_date FROM sale;
+SELECT* FROM sale where total_price > 100;
+SELECT AVG(total_price) As average_order_price FROM sale;
+SELECT SUM(total_price) As total_revenue FROM sale;
+
+
+
+
+
